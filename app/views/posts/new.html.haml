@@ -1,0 +1,19 @@
+.post
+  =form_with model:@post, class:"form", local: true do |f|
+    .form__each
+      =f.label :name, "作品名"
+      =f.text_field :name
+    .form__each
+      =f.label :detail, "詳細"
+      =f.text_area :detail
+    .form__each
+      =f.label :price, "値段"
+      =f.number_field :price
+    .form__each
+      =f.label :date, "日付"
+      =f.date_field :date
+    .form__each
+      =f.label :image, "画像"
+      =f.file_field :image
+    .form__each
+      =f.submit 'POST'

@@ -1,0 +1,14 @@
+.index{
+  height: auto;
+  width: 100vw;
+  &__each{
+    width: 300px;
+    height: 500px;
+    margin: 50px;
+    display: flex;
+    &--box{
+      margin: 30px;
+      border: 2px solid red;
+    }
+  }
+}

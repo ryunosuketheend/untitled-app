@@ -1,0 +1,10 @@
+.index
+  .index__each
+    -@posts.each do |post|
+      =link_to post_path(post.id) do
+        .index__each--box
+          =image_tag post.image.url, size: "200x200"
+          =post.name
+          =post.detail
+          =post.price
+          =post.date

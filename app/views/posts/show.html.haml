@@ -1,0 +1,10 @@
+.show
+  =image_tag @post.image.url, size: "500x500"
+  =@post.name
+  =@post.detail
+  =@post.price
+  =@post.date
+  =link_to edit_post_path(@post.id), method: :get do
+    Edit
+  =link_to post_path(@post.id), method: :delete do
+    Delete
