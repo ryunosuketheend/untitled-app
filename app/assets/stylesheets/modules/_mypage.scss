@@ -1,0 +1,12 @@
+.mypage{
+  height: 100vh;
+  width: 100vw;
+  &__profile{
+    height: 100vh;
+    width: 50%;
+    background-color: white;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    margin: auto;
+  }
+}

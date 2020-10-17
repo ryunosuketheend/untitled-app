@@ -1,0 +1,48 @@
+.form{
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("blue.png");
+  &__contents{
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    color: white;
+    padding: 200px 0;
+    h2{
+      height: auto;
+      width: 500px;
+      margin: 15px auto;
+      text-align: center;
+      font-size: 25px;
+    }
+    .field{
+      height: auto;
+      width: 500px;
+      margin: auto;
+      input{
+        width: 500px;
+        height: auto;
+        margin-bottom: 50px;
+        background-color: transparent;
+        color:white;
+      }
+      input:focus{
+        // background-color: lightblue;
+        color: white;
+      }
+    }
+    .action{
+      height: auto;
+      width: 300px;
+      margin: auto;
+      input{
+        width: 300px;
+        height: auto;
+        margin-bottom: 50px;
+        background-color: transparent;
+        font-weight: 600;
+      }
+    }
+  }
+}

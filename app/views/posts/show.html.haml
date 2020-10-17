@@ -1,10 +1,19 @@
 .show
-  =image_tag @post.image.url, size: "500x500"
-  =@post.name
-  =@post.detail
-  =@post.price
-  =@post.date
-  =link_to edit_post_path(@post.id), method: :get do
-    Edit
-  =link_to post_path(@post.id), method: :delete do
-    Delete
+  .show__image
+    =image_tag @post.image.url, size: "500x500"
+  .show__name
+    =@post.name
+  .show__detail
+    =@post.detail
+  .show__price
+    %span
+    ¥
+    =@post.price
+  .show__date
+    制作日
+    =@post.date
+  .show__edit-delete
+    =link_to edit_post_path(@post.id), method: :get, class:"show__edit-delete--edit" do
+      Edit
+    =link_to post_path(@post.id), method: :delete, data: { confirm: "削除しますか？" }, class:"show__edit-delete--delete" do
+      Delete
