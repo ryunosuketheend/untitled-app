@@ -1,0 +1,37 @@
+.post{
+  background-image: url("black.png");
+  background-size:33% 100%;
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+  &__contents{
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    color: white;
+    padding: 200px 0;
+  }
+  .fields{
+    height: auto;
+    width: 500px;
+    margin: auto;
+    input{
+      width: 500px;
+      height: auto;
+      margin-bottom: 50px;
+      background-color: transparent;
+      color:white;
+    }
+    input:focus{
+      // background-color: lightblue;
+      color: white;
+    }
+    textarea{
+      width: 500px;
+      height: 150px;
+      margin-bottom: 50px;
+      background-color: transparent;
+      color:white;
+    }
+  }
+}

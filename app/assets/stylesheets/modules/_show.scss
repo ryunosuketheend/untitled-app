@@ -1,0 +1,56 @@
+.show{
+  height: auto;
+  width: 50%;
+  border-left:4px solid black;
+  border-right: 4px solid black;
+  padding: 150px;
+  margin: auto;
+  background-color: white;
+  &__image{
+    height: 500px;
+    width: 500px;
+    margin: auto;
+  }
+  &__name{
+    height: auto;
+    width: auto;
+    font-size: 50px;
+    font-weight: 900;
+    margin: 50px 0;
+  }
+  &__edit-delete{
+    height: auto;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    margin-top: 20px;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  // &__detail{
+  //   height: auto;
+  //   width: 80%;
+  //   font-size: 30px;
+  //   margin: auto;
+  //   padding: 50px;
+  //   text-align: center;
+  // }
+  // &__price{
+  //   height: auto;
+  //   width: auto;
+  //   font-size:20px;
+  //   color: red;
+  //   font-weight: 600;
+  // }
+  // &__date{
+  //   height: auto;
+  //   width: auto;
+  //   font-size: 20px;
+  //   font-weight: 600;
+  //   font-style: oblique;
+  //   margin: 20px;
+  // }
+}

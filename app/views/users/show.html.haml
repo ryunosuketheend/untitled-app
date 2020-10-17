@@ -1,0 +1,8 @@
+.mypage
+  .mypage__profile
+    .mypage__profile--name
+      =@user.nickname
+  .mypage__contents
+    -@posts.each do |post|
+      .mypage__contents--each
+        =image_tag post.image.url, size:"500x500"
