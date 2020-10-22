@@ -1,5 +1,6 @@
 .form
   = form_with model: @user, url: user_session_path, id: 'new_user', class: 'form__contents', local: true do |f|
+    %h3 Untitled
     %h2 Log in
     .field
       = f.label :email

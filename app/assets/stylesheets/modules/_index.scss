@@ -1,9 +1,8 @@
 .index{
   height: auto;
   width: 100vw;
-  background-image: url("flowers.png");
-  background-repeat: repeat-y;
   overflow: scroll;
+  background-color: whitesmoke;
   &__contents{
     width: 100vw;
     height: auto;
@@ -11,10 +10,13 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 50px;
     &--box{
-      height: 500px;
+      height: px;
       width: 500px;
-      margin: 300px 500px;
+      padding: 50px;
+      border-top: 2px solid lightgrey;
+      border-bottom: 2px solid lightgrey;
       a{
         text-decoration: none;
         color: white;
