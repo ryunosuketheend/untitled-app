@@ -1,24 +1,140 @@
-# README
+# アプリケーション名 
+untitled
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要 
+このアプリケーションを通して、アートを人々の生活により身近なものにする
 
-Things you may want to cover:
+# URL
+デプロイ次第記述します
 
-* Ruby version
+# テスト用アカウント
+実装次第記述します
 
-* System dependencies
+# 利用方法
+アーティストが出品した商品を購入、また支援、作品の作成依頼ができます。
+アポイントメントを取り、アーティストのマイページにアクセスをすれば直接ギャラリーを訪れることができ、作品を自分の目で確認していただけます。
 
-* Configuration
+# 目指した課題解決
+近年、アーティスト、デザイナーの需要が減少し、それに伴い才能を持った方々がクリエイションをぶつける機会と場所が減少しています。そこでこのアプリを通じてより手軽にアートに接して購入していただき、人々のアートに対しての高いハードルをなくし、人々とアートの距離が近くなればいいと思っています。また、ギャラリーに直接行けるシステムを作ることで人々が普段見たり感じたりすることができない制作現場や雰囲気を感じ文化としてアートが人々の生活にあって当たり前になる様に願っています。
 
-* Database creation
+# 洗い出した要件
 
-* Database initialization
+| 優先順位             | 機能   | 目的                 |  詳細            |  ストーリー          |  見積もり        |
+| ------------------- | ------ | ----------------------- | ----------- | ------------------- | -------------- |
+| 3            |  ユーザー管理機能 | ユーザーという管理を認識していただいて、よりユーザー同士の関わりを促進するため | ユーザーがsignin,login,logoutができる様にし、マイアカウントを所持できる | はじめに個人情報を記入の上アカウントを作成してもらい、その後メールアドレスとパスワードを打ち込むとloginができる|1時間
+| 3          | 商品投稿機能 | CtoCでアプリを活用していただくため              | 商品を詳しい情報と共に投稿できる | 情報の記入欄に情報を記入していただき、写真と共に投稿をする|1時間
+| 3           | 商品購入機能 | CtoCでアプリを活用していただくため              | 商品を購入できる | 商品をクレジットカードで決済、購入ができる|2日
+| 3 | マイページ機能 | 一人のユーザーのより詳しい情報を閲覧してもらうため              | より詳しい特定のユーザーの情報を閲覧することができる| 特定のユーザーのページにアクセスして閲覧していただく|1時間
+| 3  | BASIC認証機能 | 不特定多数のログインを防ぐため              | サイトにアクセスする際にidとpassを設ける| 特定のid,passを打ち込んでウェブサイトに入る|30分
+| 3            | クレジットカード決済機能   | キャッシュレスでオンラインで決済ができる様にするため              | payjpを使ってクレジットカードで決済を可能にする|クレジットカード情報を記入欄に記入していただき、決済をしていただく|6時間
+| 3               | AWSデプロイ | 幅広い方に閲覧してもらうため | AWSを使ってデプロイをする|実際にユーザーに利用していただく上で直接的にユーザーが操作するものではない|1時間
+| 3            | AWSS3 | 画像を消えずに正常に表示させるため              | AWSS3を使ってデプロイ時に画像が正常に表示される|実際にユーザーに利用していただく上で直接的にユーザーが操作するものではない|1時間
+| 2              | お気に入り機能   | 自分が気になった商品を後から確認できる様にするため                 | ユーザーが気になった商品を後に確認できる|お気に入りをしたアイテムをお気に入り閲覧ページで後に見返していただく|1時間
+| 2 | 検索機能 | 求めている商品や出品者を見つけやすくするため | 名前を元に商品や出品者を検索できる|検索バーで文字を打ち検索していただく|30分
+| 2            | ツイート機能 | 出品者のよりリアルな姿や頭の中を購入者が閲覧できる様にするため | 出品者がより身近な出来事や状況をシェアすることができる|写真と文、または文のみでリアルタイムな情報を発信する|1時間
+| 2          | タグ機能 | カスタマーが求めているアイテムをより見つけやすくするため              | 種類別に商品をカテゴライズできる|商品投稿時にはタグをつける機能、検索の際はタグを元に特定のカテゴライズされた商品を検索していただく|1時間
+| 2           | 複数枚投稿機能 | 購入材料を増やすため              | 画像を複数枚投稿できる|出品するアイテムに関する写真を複数枚投稿していただく|3時間
+| 1 | SNS認証機能 | loginの種類の多様化と簡易化              | SNSと連携しloginなどを簡易化できる|すでに所持しているSNSアカウントと連携しその情報を元にログインをする|2時間
+| 1  | SNSシェア機能 | 拡散をしてもらい、幅広い方々に認知してもらうため              | コンテンツをSNSと連携し、シェアできる|SNSで商品の情報、サイトをシェア、拡散する|1時間
+| 1            | DM機能   | カスタマー同士の購入での流れをスムーズにするため              | ユーザー同士で会話ができる|気になった商品などがある場合に出品者と購入者間のみで手軽に出品者に連絡をすることができる|5時間
+| 1               | エラーメッセージ日本語化機能 | エラーで何が問題なのかわかりやすく伝えるため | エラーメッセージを日本語で表記される|記入欄で誤りがある際にエラーメッセージが日本語で表示される|１時間
+| 1            | プレビュー機能 | 投稿する前に出品者が選んだ写真を再度確認できる様にするため              | 商品投稿の際に写真をurlではなく、写真で表示できる|商品投稿ページでurlではなく写真を見て確認をしていただく|3時間
 
-* How to run the test suite
+# 実装した機能についてのGIFと説明
+これから実装をするので実装が終わり次第記載します
 
-* Services (job queues, cache servers, search engines, etc.)
+# 実装予定の機能
+ユーザー管理機能
+商品投稿機能
+商品購入機能
+マイページ機能
+BASIC認証機能
+クレジットカード決済機能
+AWSデプロイ
+AWSS3
+お気に入り機能
+検索機能
+ツイート機能
+タグ機能
+複数枚投稿機能
+SNS認証機能
+SNSシェア機能
+DM機能
+エラーメッセージ日本語化機能
+プレビュー機能
 
-* Deployment instructions
 
-* ...
+
+# table設計
+
+## users table
+
+| Column              | Type   | Options                 |
+| ------------------- | ------ | ----------------------- |
+| nickname            | string | null:false  unique:true |
+| first_name          | string | null:false              |
+| last_name           | string | null:false              |
+| first_name_katakana | string | null:false              |
+| last_name_katakana  | string | null:false              |
+| birthday            | date   | null:false              |
+| email               | string | null:false  unique:true |
+| password            | string | null:false              |
+
+  Association
+
+- has_many :posts
+- has_many :orders
+
+
+  ## posts table
+
+| Column              | Type       | Options                      |
+| ------------------- | ---------- | ---------------------------- |
+| name                | string     | null:false                   |
+| detail              | text       | null:false                   |
+| category            | integer    | null:false                   |
+| quality             | integer    | null:false                   |
+| delivery_cost       | integer    | null:false                   |
+| delivery_day        | integer    | null:false                   |
+| price               | integer    | null:false                   |
+| user_id             | integer    | null:false  foreign_key:true |
+| region_id           | integer    | null:false                   |
+
+  Association
+
+- belongs_to :user
+- has_one    :order
+
+
+  ## addresses table
+
+| Column        | Type       | Options                      |
+| ------------- | ---------- | ---------------------------- |
+| order         | references | null:false  foreign_key:true |
+| postal_code   | string     | null:false                   |
+| region_id     | integer    | null:false                   |
+| city          | string     | null:false                   |
+| building_name | string     |                              |
+| phone_number  | string     | null:false                   |
+| house_number  | string     | null:false                   |
+
+  Association
+
+- belongs_to :order
+
+
+ ## orders table
+
+ | Column  | Type       | Options                      |
+ | ------- | ---------- | ---------------------------- |
+ | user    | references | null:false  foreign_key:true |
+ | item    | references | null:false  foreign_key:true |
+
+  Association
+
+- belongs_to :user
+- belongs_to :post
+- has_one    :address
+
+# ローカルでの動作方法
+$ git clone https://github.com/ryunosuketheend/untitled-app.git
