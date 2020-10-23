@@ -4,3 +4,4 @@
       .index__contents--box 
         =link_to post_path(post.id) do
           =image_tag post.image.url, size: "500x500", class:"image"
+          =post.user.nickname

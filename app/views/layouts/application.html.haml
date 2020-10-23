@@ -9,20 +9,8 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .top
-      .top__list
-        .top__list--each
-          =link_to posts_path do
-            1
-        .top__list--each
-          =link_to new_post_path do
-            2
-        .top__list--each
-          =link_to users_path do
-            3
-        .top__list--each
-          = link_to destroy_user_session_path, method: :delete do
-            4
-        .top__list--each
-          =link_to "/users/#{current_user.id}" do
-            5
+      .top__title
+        =link_to "/" do
+          %h4 untitled
+        %h5 生活にアートを
       = yield

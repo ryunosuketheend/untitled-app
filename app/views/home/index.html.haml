@@ -1,0 +1,17 @@
+
+.top__contents
+  .top__contents--each
+    =link_to posts_path do
+      Index
+  .top__contents--each
+    =link_to new_post_path do
+      Post
+  .top__contents--each
+    =link_to users_path do
+      Artists
+  .top__contents--each
+    =link_to "/users/#{current_user.id}" do
+      Mypage
+.top__logout
+  = link_to destroy_user_session_path, method: :delete do
+    Logout
